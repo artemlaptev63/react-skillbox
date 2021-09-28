@@ -1,9 +1,12 @@
 import React from "react";
+import {hot} from "react-hot-loader/root";
 
-export const Header = () => {
+const HeaderComponent = () => {
   return (
     <header>
-      <h1>Header edit 3</h1>
+      <h1>Header</h1>
     </header>
   )
 }
+
+export const Header = hot(HeaderComponent);
