@@ -12,14 +12,14 @@ function setupDevtools() {
 }
 module.exports = {
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
+    extensions: [".js", ".jsx", ".json"],
     alias: {
       "react-dom": IS_DEV ? "@hot-loader/react-dom" : "react-dom",
     }
   },
   mode: NODE_ENV ? NODE_ENV : "development",
   entry: [
-    path.resolve(__dirname, "../src/client/index.tsx"),
+    path.resolve(__dirname, "../src/client/index.jsx"),
     "webpack-hot-middleware/client?path=http://localhost:3001/static/__webpack_hmr",
   ],
   output: {
@@ -31,12 +31,22 @@ module.exports = {
     rules: [
       {
         test: /\.[tj]sx?$/,
-        use: {
-            loader: 'babel-loader',
+        use: ["ts-loader"]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          "style-loader", {
+            loader: "css-loader",
             options: {
-              presets: ['@babel/preset-env', '@babel/preset-react']
+              modules: {
+                mode: "local",
+                localIdentName: "[name]__[local]--[hash:base64:5]"
+              }
             }
-        }
+          },
+          "less-loader"
+        ]
       }
     ]
   },

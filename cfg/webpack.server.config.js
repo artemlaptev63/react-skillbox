@@ -12,20 +12,31 @@ module.exports = {
     filename: "server.js",
   },
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx", ".json"]
+    extensions: [".js", ".jsx", ".json"]
   },
   externals: [nodeExternals()],
   module: {
     rules: [
       {
         test: /\.[tj]sx?$/,
-        use: {
-            loader: 'babel-loader',
+        use: ["ts-loader"]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: "css-loader",
             options: {
-                presets: ['@babel/preset-env', '@babel/preset-react']
+              modules: {
+                mode: "local",
+                localIdentName: "[name]__[local]--[hash:base64:5]"
+              },
+              onlyLocals: true,
             }
-        }
-      }
+          },
+          "less-loader"
+        ]
+      } 
     ]
   },
   optimization: {
