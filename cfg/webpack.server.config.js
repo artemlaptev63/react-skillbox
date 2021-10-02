@@ -12,7 +12,7 @@ module.exports = {
     filename: "server.js",
   },
   resolve: {
-    extensions: [".js", ".jsx", ".json"]
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".json", ".less", ".css"]
   },
   externals: [nodeExternals()],
   module: {
@@ -20,6 +20,19 @@ module.exports = {
       {
         test: /\.[tj]sx?$/,
         use: ["ts-loader"]
+      },
+      {
+        test: /\.css/,
+        use: [{
+          loader: "css-loader",
+          options: {
+            modules: {
+              mode: "local",
+              localIdentName: "[name]__[local]--[hash:base64:5]"
+            },
+            onlyLocals: true,
+          }
+        },]
       },
       {
         test: /\.less$/,
@@ -35,8 +48,8 @@ module.exports = {
             }
           },
           "less-loader"
-        ]
-      } 
+        ],
+      }
     ]
   },
   optimization: {

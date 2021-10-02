@@ -1,0 +1,29 @@
+.createdAt {
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: var(--gray99);
+  margin-left: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  display: none;
+  margin-right: 4px;
+  margin-left: 3px;
+  color: var(--gray99);
+}
+
+@media all and (min-width: 1024px) {
+  .label {
+    display: inline-block;
+    margin-left: 0;
+  }
+
+  .createdAt {
+    margin-left: 0;
+    font-size: 14px;
+    line-height: 16px;
+  }
+}

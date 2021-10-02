@@ -1,0 +1,40 @@
+.cardHeaderContainer {
+  padding: 22px 20px 13px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.postMetaContainer {
+  margin-bottom: 7px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+@media all and (min-width: 1024px) {
+  .cardHeaderContainer {
+    padding-left: 38px;
+  }
+  
+  .descriptionContainer {
+    order: 1;
+    margin-bottom: 7px;
+  }
+
+  .postMetaContainer {
+    order: 2;
+    margin-bottom: 0;
+  }
+
+  .meta {
+    order: 2;
+    margin-left: 7px;
+  }
+
+  .createdAt {
+    order: 1;
+  }
+}
+

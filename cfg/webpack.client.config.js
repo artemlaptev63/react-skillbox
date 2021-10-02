@@ -12,14 +12,14 @@ function setupDevtools() {
 }
 module.exports = {
   resolve: {
-    extensions: [".js", ".jsx", ".json"],
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".json", ".less", ".css"],
     alias: {
       "react-dom": IS_DEV ? "@hot-loader/react-dom" : "react-dom",
     }
   },
   mode: NODE_ENV ? NODE_ENV : "development",
   entry: [
-    path.resolve(__dirname, "../src/client/index.jsx"),
+    path.resolve(__dirname, "../src/client/index.tsx"),
     "webpack-hot-middleware/client?path=http://localhost:3001/static/__webpack_hmr",
   ],
   output: {
@@ -34,6 +34,18 @@ module.exports = {
         use: ["ts-loader"]
       },
       {
+        test: /\.css/,
+        use: ["style-loader", {
+            loader: "css-loader",
+            options: {
+              modules: {
+                mode: "local",
+                localIdentName: "[name]__[local]--[hash:base64:5]"
+              }
+            }
+          },]
+      },
+      {
         test: /\.less$/,
         use: [
           "style-loader", {
@@ -46,7 +58,7 @@ module.exports = {
             }
           },
           "less-loader"
-        ]
+        ],
       }
     ]
   },

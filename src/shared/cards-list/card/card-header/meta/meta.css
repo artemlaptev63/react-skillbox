@@ -1,0 +1,6 @@
+.meta {
+  display: flex;
+  align-items: center;
+  direction: row;
+  justify-content: flex-start;
+}

@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex: 2;
+}
+
+.container button {
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+.count {
+  margin-left: 6px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--grayC4);
+}
+
+@media all and (min-width: 1024px) {
+  .container {
+    display: none;
+  }
+}

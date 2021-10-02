@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 3;
+}
+
+.container button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.count {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  margin-left: 4px;
+  margin-right: 4px;
+  color: var(--grayC4);
+}
+
+.up:hover path {
+  fill: var(--green);
+}
+
+.down:hover path {
+  fill: var(--orange);
+}
+
+@media all and (min-width: 1024px) {
+  .container {
+    flex-direction: column;
+    flex: auto;
+  }
+
+  .count {
+    margin: 3px 0;
+  }
+}
