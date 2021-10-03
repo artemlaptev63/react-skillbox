@@ -26,4 +26,8 @@
     font-size: 14px;
     line-height: 16px;
   }
+
+  .container {
+    order: 1;
+  }
 }

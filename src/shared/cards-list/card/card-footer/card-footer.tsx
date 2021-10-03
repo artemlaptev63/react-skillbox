@@ -5,14 +5,15 @@ import {Comments} from "./comments/comments";
 import {Likes} from "./likes/likes";
 
 type CardFooterProps = {
-
+  likes: number;
+  comments: number;
 }
 
 export function CardFooter(props: CardFooterProps) {
   return (
     <div className={styles.container}>
-      <Likes/>
-      <Comments/>
+      <Likes likes={props.likes}/>
+      <Comments comments={props.comments}/>
       <CardActions/>
     </div>
   )

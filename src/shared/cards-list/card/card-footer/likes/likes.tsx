@@ -4,7 +4,7 @@ import {ArrowUpIcon} from "../../../../../icons/arrow-up";
 import styles from "./likes.css";
 
 type LikesProps = {
-
+  likes: number;
 }
 
 export function Likes(props: LikesProps) {
@@ -13,7 +13,7 @@ export function Likes(props: LikesProps) {
       <button className={styles.up}>
         <ArrowUpIcon/>
       </button>
-      <span className={styles.count}>101</span>
+      <span className={styles.count}>{props.likes}</span>
       <button className={styles.down}>
         <ArrowDownIcon/>
       </button>

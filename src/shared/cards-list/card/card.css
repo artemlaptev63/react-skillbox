@@ -20,31 +20,10 @@
   color: var(--orange);
 }
 
-.footer {
-  position: relative;
-}
-
 @media all and (min-width: 1024px) {
   .card {
     flex-flow: row;
     padding: 40px;
-  }
-
-  .header {
-    order: 2;
-    width: 85%;
-  }
-
-  .preview {
-    order: 1;
-  }
-
-  .footer {
-    order: 3;
-    flex: 1;
-    display: flex;
-    height: auto;
-    justify-content: center;
   }
 }
 

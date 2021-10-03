@@ -4,3 +4,10 @@
   direction: row;
   justify-content: flex-start;
 }
+
+@media all and (min-width: 1024px) {
+  .meta {
+    order: 2;
+    margin-left: 7px;
+  }
+}

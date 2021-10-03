@@ -14,6 +14,11 @@
 }
 
 @media all and (min-width: 1024px) {
+  .header {
+    order: 2;
+    width: 85%;
+  }
+  
   .cardHeaderContainer {
     padding-left: 38px;
   }
@@ -26,15 +31,6 @@
   .postMetaContainer {
     order: 2;
     margin-bottom: 0;
-  }
-
-  .meta {
-    order: 2;
-    margin-left: 7px;
-  }
-
-  .createdAt {
-    order: 1;
   }
 }
 

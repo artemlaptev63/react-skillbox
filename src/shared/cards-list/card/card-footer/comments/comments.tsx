@@ -3,7 +3,7 @@ import {CommentIcon} from "../../../../../icons/comment";
 import styles from "./comments.css";
 
 type CommentsProps = {
-
+  comments: number;
 }
 
 export function Comments(props: CommentsProps) {
@@ -13,7 +13,7 @@ export function Comments(props: CommentsProps) {
         <CommentIcon/>
       </button>
       <span className={styles.count}>
-        23
+        {props.comments}
       </span>
     </div>
   )
