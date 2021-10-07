@@ -6,21 +6,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
   border: none;
-  top: 18px;
-  right: 20px;
   cursor: pointer;
-}
-
-.menu:focus,
-.menu:hover {
-  background-color: var(--grayD9);
-}
-
-.menu:focus .dot,
-.menu:hover .dot {
-  background-color: var(--grayF3);
+  top: 0;
+  right: 0;
+  position: absolute;
 }
 
 .dots {
@@ -38,17 +28,25 @@
   border-radius: 50%;
 }
 
+.menu:hover {
+  background-color: var(--grayD9);
+}
+
+.menu:hover .dot {
+  background-color: var(--grayF3);
+}
+
 @media all and (min-width: 1024px) {
   .menu {
     transform: rotate(90deg);
     right: 81px;
-    top: 75px;
+    top: 61px;
   }
 }
 
 @media all and (min-width: 1540px) {
   .menu {
-    right: 104px;
-    top: 96px;
+    right: 93px;
+    top: 82px;
   }
 }

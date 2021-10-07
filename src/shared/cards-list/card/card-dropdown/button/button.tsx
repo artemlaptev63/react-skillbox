@@ -1,12 +1,7 @@
 import React from "react";
-import {DotsIcon} from "../../../../icons/dots";
-import styles from "./dropdown.css";
+import styles from "./button.css";
 
-type CardMenuProps = {
-
-}
-
-export function CardMenu(props: CardMenuProps) {
+export function CardDropdownButton() {
   return (
     <button className={styles.menu}>
       <span className={styles.dots}>
@@ -15,5 +10,5 @@ export function CardMenu(props: CardMenuProps) {
         <span className={styles.dot}></span>
       </span>
     </button>
-  )
+  );
 }

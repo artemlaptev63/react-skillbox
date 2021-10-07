@@ -4,7 +4,7 @@ import {CardFooter} from "./card-footer/card-footer";
 import {CardHeader} from "./card-header/card-header";
 import {CardPreview} from "./card-preview/card-preview";
 import styles from "./card.css";
-import {CardMenu} from "./dropdown/dropdown";
+import {CardMenu} from "./card-dropdown/card-dropdown";
 
 type CardProps = {
   post: Post;
