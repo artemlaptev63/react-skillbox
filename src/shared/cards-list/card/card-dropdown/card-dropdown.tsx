@@ -1,11 +1,8 @@
 import React from "react";
 import {Dropdown} from "../../../../common/dropdown/dropdown";
 import {GenericList, Item} from "../../../../common/generic-list";
-import {CommentIcon} from "../../../../icons/comment";
-import {ComplainIcon} from "../../../../icons/complain";
-import {HideIcon} from "../../../../icons/hide";
-import {SaveIcon} from "../../../../icons/save";
-import {ShareStrokeIcon} from "../../../../icons/share/stroke";
+import {Icon} from "../../../../icons";
+import {EIcons} from "../../../../icons/types";
 import {merge} from "../../../../utils/merge";
 import {noop} from "../../../../utils/noop";
 import {pipe} from "../../../../utils/pipe";
@@ -16,26 +13,31 @@ import styles from "./card-dropdown.css";
 const LIST = [
   {
     text: "Комментарии",
-    Icon: <CommentIcon className={styles.icon}/>,
+    Icon: <Icon className={styles.icon} 
+                iconName={EIcons.COMMENT}/>,
     extraClassName: styles.hidenItem,
   },
   {
     text: "Поделиться",
-    Icon: <ShareStrokeIcon className={styles.icon}/>,
+    Icon: <Icon className={styles.icon} 
+                iconName={EIcons.SHARE_STROKE}/>,
     extraClassName: styles.hidenItem,
   },
   {
     text: "Скрыть",
-    Icon: <HideIcon className={styles.icon}/>,
+    Icon: <Icon className={styles.icon} 
+                iconName={EIcons.HIDE}/>,
   },
   {
     text: "Сохранить",
-    Icon: <SaveIcon className={styles.icon}/>,
+    Icon: <Icon className={styles.icon} 
+                iconName={EIcons.SAVE}/>,
     extraClassName: styles.hidenItem,
   },
   {
     text: "Пожаловаться",
-    Icon: <ComplainIcon className={styles.icon}/>,
+    Icon: <Icon className={styles.icon} 
+                iconName={EIcons.COMPLAIN}/>,
   },
   {
     text: "Закрыть",

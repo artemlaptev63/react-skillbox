@@ -8,6 +8,7 @@ import {CardsList, Post} from "./shared/cards-list/cards-list";
 import {generateId} from "./utils/random-string";
 import {merge} from "./utils/merge";
 import {Dropdown} from "./common/dropdown/dropdown";
+import {Colors, Text} from "./common/text/text";
 
 const data: Array<Post> = [
   {

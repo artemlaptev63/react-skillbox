@@ -1,24 +1,19 @@
 import React from "react";
-import {ArrowIcon} from "../../../../../icons/arrow";
-import {RemoveIcon} from "../../../../../icons/remove";
-import {ShareIcon} from "../../../../../icons/share";
+import {Icon} from "../../../../../icons";
+import {EIcons} from "../../../../../icons/types";
 import styles from "./actions.css";
 
-type CardActionsProps = {
-
-}
-
-export function CardActions(props: CardActionsProps) {
+export function CardActions() {
   return (
     <div className={styles.container}>
       <button>
-        <ArrowIcon/>
+        <Icon iconName={EIcons.ARROW}/>
       </button>
       <button>
-        <ShareIcon/>
+        <Icon iconName={EIcons.SHARE}/>
       </button>
       <button>
-        <RemoveIcon/>
+        <Icon iconName={EIcons.REMOVE}/>
       </button>
     </div>
   )

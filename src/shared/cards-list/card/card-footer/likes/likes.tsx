@@ -1,6 +1,6 @@
 import React from "react";
-import {ArrowDownIcon} from "../../../../../icons/arrow-down";
-import {ArrowUpIcon} from "../../../../../icons/arrow-up";
+import {Icon} from "../../../../../icons";
+import {EIcons} from "../../../../../icons/types";
 import styles from "./likes.css";
 
 type LikesProps = {
@@ -11,11 +11,11 @@ export function Likes(props: LikesProps) {
   return (
     <div className={styles.container}>
       <button className={styles.up}>
-        <ArrowUpIcon/>
+        <Icon iconName={EIcons.ARROW_UP}/>
       </button>
       <span className={styles.count}>{props.likes}</span>
       <button className={styles.down}>
-        <ArrowDownIcon/>
+        <Icon iconName={EIcons.ARROW_DOWN}/>
       </button>
     </div>
   )
