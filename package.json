@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "env NODE_ENV=development node ./bin/dev.js",
+    "dev": "env NODE_ENV=development CLIENT_ID=qvB2EedWRtWaEXnytfvr9A node ./bin/dev.js",
     "build:dev": "env NODE_ENV=development webpack --config webpack.config.js",
     "build:prod": "env NODE_ENV=production webpack --config webpack.config.js",
     "test": "jest"

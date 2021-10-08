@@ -2,6 +2,7 @@ import React from "react";
 import {ArrowIcon} from "./arrow";
 import {ArrowDownIcon} from "./arrow-down";
 import {ArrowUpIcon} from "./arrow-up";
+import {AvatarPlaceholderIcon} from "./avatar-placeholder/avatar-placeholder";
 import {CommentIcon} from "./comment";
 import {ComplainIcon} from "./complain";
 import {DotsIcon} from "./dots";
@@ -30,7 +31,8 @@ export function Icon(props: IconCommonProps) {
     [EIcons.REMOVE]: <RemoveIcon {...rest}/>,
     [EIcons.SAVE]: <SaveIcon {...rest}/>,
     [EIcons.SHARE]: <ShareIcon {...rest}/>,
-    [EIcons.SHARE_STROKE]: <ShareStrokeIcon {...rest}/>
+    [EIcons.SHARE_STROKE]: <ShareStrokeIcon {...rest}/>,
+    [EIcons.AVATAR_PLACEHOLDER]: <AvatarPlaceholderIcon {...rest}/>,
   }
 
   return icons[iconName];

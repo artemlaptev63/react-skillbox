@@ -19,4 +19,5 @@ export enum EIcons {
   SAVE,
   SHARE,
   SHARE_STROKE,
+  AVATAR_PLACEHOLDER,
 };
