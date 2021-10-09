@@ -1,4 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
+import {Icon} from "../../../../../../icons";
+import {EIcons} from "../../../../../../icons/types";
 import styles from "./avatar.css";
 
 type AvatarProps = {
@@ -6,9 +8,19 @@ type AvatarProps = {
 }
 
 export function Avatar(props: AvatarProps) {
+  const [error, setError] = useState(false);
   return (
-    <img className={styles.avatar} 
-         alt="avatar"
-         src={props.avatar}/>
+    <>
+      {
+        !error ? (
+          <img className={styles.avatar}
+               src={props.avatar}
+               alt="avatars"
+               onError={(e) => setError(true)}/>
+        ) : (
+          <Icon height="20" width="20" iconName={EIcons.AVATAR_PLACEHOLDER} />
+        )
+      }
+    </>
   )
 }

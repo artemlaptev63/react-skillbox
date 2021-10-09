@@ -1,27 +1,20 @@
-import React from "react";
+import React, {useContext} from "react";
+import {PostsContext} from "../../context/posts-context/context";
+import {merge} from "../../utils/merge";
 import {Card} from "./card/card";
 
-type CardsListProps = {
-  posts: Array<Post>;
-}
+export function CardsList() {
+  const handleItemClick = (id: string) => {
+    console.log(id);
+  }
+  
+  const postData = useContext(PostsContext);
 
-export type Post = {
-  userName: string;
-  createdAt: string;
-  src: string;
-  description: string;
-  avatar: string;
-  likesCount: number;
-  commentsCount: number;
-  id: string;
-}
-
-export function CardsList(props: CardsListProps) {
   return (
     <ul>
       {
-        props.posts.map(item => {
-          return <Card post={item} key={item.id}/>
+        postData.map(merge({onClick: handleItemClick})).map(item => {
+          return <Card post={item.data} key={item.data.id}/>
         })
       }
     </ul>

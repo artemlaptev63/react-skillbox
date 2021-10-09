@@ -1,10 +1,10 @@
 import React from "react";
-import {Post} from "../cards-list";
 import {CardFooter} from "./card-footer/card-footer";
 import {CardHeader} from "./card-header/card-header";
 import {CardPreview} from "./card-preview/card-preview";
 import styles from "./card.css";
 import {CardMenu} from "./card-dropdown/card-dropdown";
+import {Post} from "../../../context/posts-context/context";
 
 type CardProps = {
   post: Post;
@@ -13,12 +13,13 @@ type CardProps = {
 export function Card({post}: CardProps) {
   return (
     <li className={styles.card}>
-      <CardHeader avatar={post.avatar} 
-                  createdAt={post.createdAt} 
-                  userName={post.userName} 
-                  description={post.description}/>
-      <CardPreview src={post.src}/>
-      <CardFooter likes={post.likesCount} comments={post.commentsCount}/>
+      <CardHeader avatar={post.sr_detail.icon_img} 
+                  createdAt={post.created} 
+                  userName={post.author} 
+                  description={post.title}
+                  postUrl={post.url}/>
+      <CardPreview src={post.thumbnail}/>
+      <CardFooter likes={post.score} comments={post.num_comments}/>
       <CardMenu/>
     </li>
   )

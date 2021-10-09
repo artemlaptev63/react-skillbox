@@ -23,6 +23,7 @@ export function Dropdown(props: DropdownProps) {
 
   useEffect(() => {
     const hide = () => setIsVisible(false);
+
     document.addEventListener("click", hide);
     return () => document.removeEventListener("click", hide);
   }, [])
@@ -35,7 +36,8 @@ export function Dropdown(props: DropdownProps) {
     isVisible ? onOpen() : onClose();
   }, [isVisible])
 
-  const handleOpen = () => {
+  const handleOpen = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.stopPropagation();
     if(isOpen === undefined) {
       setIsVisible(!isVisible);
       return;
@@ -43,7 +45,7 @@ export function Dropdown(props: DropdownProps) {
   }
 
   return (
-    <div className={styles.container} onClick={(e) => e.stopPropagation()}>
+    <div className={styles.container}>
       <div onClick={handleOpen}>
         {button}
       </div>

@@ -6,9 +6,10 @@ import {CardMeta} from "./meta/meta";
 
 type CardHeaderProps = {
   userName: string;
-  createdAt: string;
+  createdAt: number;
   description: string;
   avatar: string;
+  postUrl: string;
 }
 
 export function CardHeader(props: CardHeaderProps) {
@@ -20,7 +21,7 @@ export function CardHeader(props: CardHeaderProps) {
           <CreatedAt createdAt={props.createdAt}/>
         </div>
         <div className={styles.descriptionContainer}>
-          <Description description={props.description}/>
+          <Description postUrl={props.postUrl} description={props.description}/>
         </div>
       </div>
     </div>
