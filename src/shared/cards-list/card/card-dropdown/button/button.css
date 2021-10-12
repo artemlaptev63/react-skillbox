@@ -8,9 +8,6 @@
   justify-content: center;
   border: none;
   cursor: pointer;
-  top: 0;
-  right: 0;
-  position: absolute;
 }
 
 .dots {
@@ -39,14 +36,6 @@
 @media all and (min-width: 1024px) {
   .menu {
     transform: rotate(90deg);
-    right: 81px;
-    top: 61px;
   }
 }
 
-@media all and (min-width: 1540px) {
-  .menu {
-    right: 93px;
-    top: 82px;
-  }
-}

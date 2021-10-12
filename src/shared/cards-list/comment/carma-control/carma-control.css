@@ -1,0 +1,33 @@
+.icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iconContainer {
+  display: flex;
+  flex-direction: column;
+  margin-right: 22px;
+  align-items: center;
+}
+
+.arrowTop,
+.arrowDown {
+  cursor: pointer;
+}
+
+.arrowDown {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.arrowDown:hover path,
+.arrowTop:hover path {
+  fill: var(--orange);
+}
+
+.border {
+  width: 3px;
+  height: 100%;
+  background: var(--grayD9);
+}

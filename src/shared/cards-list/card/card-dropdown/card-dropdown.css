@@ -2,20 +2,18 @@
   margin-right: 6px;
 }
 
+.dropdown {
+  top: 11px;
+  right: 15px;
+  position: absolute;
+}
+
 .list {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
   border-radius: 3px;
   position: absolute;
-  right: 14px;
-  top: 35px;
   min-width: 150px;
   background: var(--white);
-}
-
-.dropdownContainer {
-  top: 18px;
-  right: 20px;
-  position: absolute;
 }
 
 .menuItem {
@@ -59,9 +57,9 @@
 }
 
 @media all and (min-width: 1024px) {
-  .list {
-    top: 98px;
-    right: 20px;
+  .dropdown {
+    right: 96px;
+    top: 77px;
   }
 
   .hidenItem {
@@ -70,8 +68,9 @@
 }
 
 @media all and (min-width: 1540px) {
-  .list {
-    top: 120px;
-    right: 32px;
+  .dropdown {
+    right: 111px;
+    top: 96px;
   }
 }
+

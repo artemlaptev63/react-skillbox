@@ -1,0 +1,22 @@
+.controls {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.controlContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 15px;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.controlContainer:hover * {
+  color: var(--orange);
+  fill: var(--orange);
+}

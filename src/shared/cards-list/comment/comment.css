@@ -1,0 +1,24 @@
+.comment {
+  display: flex;
+  flex-direction: row;
+  margin-top: 34px;
+}
+
+.container {
+  flex: 1;
+}
+
+.commentsList {
+  padding-left: 10px;
+  flex: 1;
+}
+
+.meta {
+  order: 1;
+}
+
+@media all and (min-width: 1024px) {
+  .meta {
+    margin-left: 0;
+  }
+}

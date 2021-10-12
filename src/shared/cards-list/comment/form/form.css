@@ -1,0 +1,44 @@
+.textareaControls {
+  display: flex;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
+.close {
+  border: none;
+  background: var(--white);
+  color: var(--black);
+  font-size: 16px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--orange);
+  text-decoration: underline;
+}
+
+.reply {
+  border: none;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 16px;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+}
+
+.reply:hover {
+  opacity: .7;
+}
+
+.input {
+  height: 89px;
+  margin-top: 10px;
+  width: 100%;
+  border: 1px solid var(--grayD9);
+  border-radius: 3px;
+  resize: none;
+  outline-color: var(--orange);
+}

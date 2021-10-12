@@ -57,15 +57,14 @@ export function CardMenu() {
     className: styles.menuItem,
   }
 
-  const list: Array<Item> = LIST.map(pipe(generateId, merge(commonFields)))
-
+  const list: Array<Item> = LIST.map(pipe(generateId, merge(commonFields)));
+  
   return (
-    <div className={styles.dropdownContainer}>
-      <Dropdown button={<CardDropdownButton/>}>
-        <ul className={styles.list}>
-          <GenericList list={list}/>
-        </ul>
-      </Dropdown>
-    </div>
+    <Dropdown button={<CardDropdownButton/>} 
+              className={styles.dropdown}>
+      <ul className={styles.list}>
+        <GenericList list={list}/>
+      </ul>
+    </Dropdown>
   )
 }

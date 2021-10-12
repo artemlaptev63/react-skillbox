@@ -10,6 +10,7 @@ type CardHeaderProps = {
   description: string;
   avatar: string;
   postUrl: string;
+  postId: string;
 }
 
 export function CardHeader(props: CardHeaderProps) {
@@ -21,7 +22,7 @@ export function CardHeader(props: CardHeaderProps) {
           <CreatedAt createdAt={props.createdAt}/>
         </div>
         <div className={styles.descriptionContainer}>
-          <Description postUrl={props.postUrl} description={props.description}/>
+          <Description postId={props.postId} postUrl={props.postUrl} description={props.description}/>
         </div>
       </div>
     </div>

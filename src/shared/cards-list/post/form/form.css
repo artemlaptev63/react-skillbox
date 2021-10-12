@@ -1,0 +1,28 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.textarea {
+  width: 100%;
+  outline-color: var(--orange);
+  border: 1px solid var(--grayD9);
+  border-radius: 3px 3px 0px 0px;
+  resize: none;
+  height: 90px;
+}
+
+.button {
+  border-radius: 0px 0px 3px 0px;
+  border:none;
+  padding: 17px 50px;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 14px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.button:hover {
+  opacity: .7;
+}
