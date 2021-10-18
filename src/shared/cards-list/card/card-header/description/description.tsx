@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import {CommentContextProvider} from "../../../../../context/comment-context/provider";
 import {Post} from "../../../post/post";
 import styles from "./description.css";
 
@@ -19,13 +18,11 @@ export function Description(props: DescriptionProps) {
           {props.description}
         </span>
       </a>
-      <CommentContextProvider>
-        {
-          isModalOpened ? (
-            <Post postId={props.postId} onClose={() => setIsModalOpened(false)}/>
-          ) : null
-        } 
-      </CommentContextProvider>
+      {
+        isModalOpened ? (
+          <Post postId={props.postId} onClose={() => setIsModalOpened(false)}/>
+        ) : null
+      }
     </>
   )
 }

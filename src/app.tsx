@@ -8,21 +8,25 @@ import {TokenContextProvider} from "./context/token-context/provider";
 import {UserContextProvider} from "./context/user-context/provider";
 import {PostsContextProvider} from "./context/posts-context/provider";
 import "./main.global.css";
+import {Provider} from "react-redux";
+import {store} from "./store";
 
 function AppComponent() {
   return (
-    <TokenContextProvider>
-      <UserContextProvider>
-        <Layout>
-          <Header/>
-          <Content>
-            <PostsContextProvider>
-              <CardsList/>
-            </PostsContextProvider>
-          </Content>
-        </Layout>
-      </UserContextProvider>
-    </TokenContextProvider>
+    <Provider store={store}>
+      <TokenContextProvider>
+        <UserContextProvider>
+          <Layout>
+            <Header/>
+            <Content>
+              <PostsContextProvider>
+                <CardsList/>
+              </PostsContextProvider>
+            </Content>
+          </Layout>
+        </UserContextProvider>
+      </TokenContextProvider>
+    </Provider>
   )
 }
 

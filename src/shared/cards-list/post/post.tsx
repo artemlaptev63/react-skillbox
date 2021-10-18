@@ -2,7 +2,7 @@ import React from "react";
 import {Modal} from "../../../common/modal/modal";
 import {usePostComments} from "../../../hooks/use-post-comments";
 import {CommentsList} from "../comments-list/comments-list";
-import {PostCommentForm} from "./form/form";
+import {CommentFormContainer} from "./form-container/form-container";
 import styles from "./post.css";
 
 type PostProps = {
@@ -12,7 +12,7 @@ type PostProps = {
 
 export function Post(props: PostProps) {
   const {comments} = usePostComments(props.postId);
-  console.log(comments);
+  
   return (
     <Modal onClose={props.onClose}>
       <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem enim impedit magni</h2>
@@ -22,7 +22,7 @@ export function Post(props: PostProps) {
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptatibus vel ad, illo a inventore adipisci eos ratione atque asperiores cupiditate quis neque enim error, odio accusantium impedit corrupti maiores.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique magnam et facilis, iure sit nulla sunt nihil, beatae sapiente architecto quisquam. Necessitatibus et repellendus dolore illum voluptatibus quos nobis excepturi.</p>
       </div>
-      <PostCommentForm />
+      <CommentFormContainer/>
       <CommentsList comments={comments} />
     </Modal>
   )

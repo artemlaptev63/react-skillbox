@@ -1,20 +1,17 @@
-import React, {FormEvent, useContext} from "react";
-import {CommentContext} from "../../../../context/comment-context/context";
+import React, {ChangeEvent, FormEvent} from "react";
 import styles from "./form.css";
 
-export function PostCommentForm() {
-  const {comment, setComment} = useContext(CommentContext);
+type PostCommentFormProps = {
+  comment: string;
+  handleChange(e: ChangeEvent<HTMLTextAreaElement>): void;
+  handleSubmit(e: FormEvent): void;
+}
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    console.log(comment);
-    setComment("");
-  }
-
+export function PostCommentForm(props: PostCommentFormProps) {
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
-      <textarea value={comment}
-                onChange={e => setComment(e.target.value)}
+    <form onSubmit={props.handleSubmit} className={styles.form}>
+      <textarea value={props.comment}
+                onChange={props.handleChange}
                 className={styles.textarea}/>
       <button type="submit" className={styles.button}>Комментировать</button>
     </form>
