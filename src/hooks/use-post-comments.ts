@@ -1,7 +1,7 @@
 import axios, {AxiosResponse} from "axios";
-import {useContext, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {Post} from "../context/posts-context/context";
-import {TokenContext} from "../context/token-context/context";
+import {useAppSelector} from "./use-selector";
 
 export type TComment = {
   data: {
@@ -22,7 +22,7 @@ export type CommentResponse = {
 type CommentsResponse = [Post, CommentResponse];
 
 export function usePostComments(postId: string) {
-  const token = useContext(TokenContext);
+  const token = useAppSelector(state => state.token);
   const [comments, setComments] = useState<TComment[]>([]);
 
   useEffect(() => {

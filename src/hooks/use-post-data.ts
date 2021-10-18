@@ -1,7 +1,7 @@
 import axios, {AxiosResponse} from "axios";
-import {useContext, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {PostData} from "../context/posts-context/context";
-import {TokenContext} from "../context/token-context/context";
+import {useAppSelector} from "./use-selector";
 
 type PostDataResponse = {
   data: {
@@ -10,7 +10,7 @@ type PostDataResponse = {
 }
 
 export function usePostData()  {
-  const token = useContext(TokenContext);
+  const token = useAppSelector(state => state.token);
   const [postData, setPostData] = useState<Array<PostData>>([]);
 
   useEffect(() => {

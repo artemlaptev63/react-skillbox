@@ -4,30 +4,31 @@ import {Header} from "./shared/header/header";
 import {Layout} from "./shared/layout/layout";
 import {Content} from "./shared/content/content";
 import {CardsList} from "./shared/cards-list/cards-list";
-import {TokenContextProvider} from "./context/token-context/provider";
 import {UserContextProvider} from "./context/user-context/provider";
 import {PostsContextProvider} from "./context/posts-context/provider";
 import "./main.global.css";
 import {Provider} from "react-redux";
 import {store} from "./store";
+import {useToken} from "./hooks/use-token";
 
 function AppComponent() {
+  useToken();
   return (
-    <Provider store={store}>
-      <TokenContextProvider>
-        <UserContextProvider>
-          <Layout>
-            <Header/>
-            <Content>
-              <PostsContextProvider>
-                <CardsList/>
-              </PostsContextProvider>
-            </Content>
-          </Layout>
-        </UserContextProvider>
-      </TokenContextProvider>
-    </Provider>
+    <UserContextProvider>
+      <Layout>
+        <Header/>
+        <Content>
+          <PostsContextProvider>
+            <CardsList/>
+          </PostsContextProvider>
+        </Content>
+      </Layout>
+    </UserContextProvider>
   )
 }
 
-export const App = hot(() => <AppComponent/>);
+export const App = hot(() => (
+  <Provider store={store}>
+    <AppComponent/>
+  </Provider>
+));
