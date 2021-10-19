@@ -8,6 +8,7 @@ import styles from "./user-block.css";
 type UserBlockProps = {
   username?: string;
   avatarSrc?: string
+  loading: boolean;
 }
 
 export function UserBlock(props: UserBlockProps) {
@@ -25,7 +26,13 @@ export function UserBlock(props: UserBlockProps) {
         
       </div>
       <div className={styles.username}>
-        <Text size={20} color={props.username ? Colors.black : Colors.gray99}>{props.username || "Аноним"}</Text>
+        {
+          props.loading ? (
+            <Text size={20} color={Colors.gray99}>Загрузка...</Text>
+          ) : (
+            <Text size={20} color={props.username ? Colors.black : Colors.gray99}>{props.username || "Аноним"}</Text>
+          )
+        }
       </div>
     </a>
   )

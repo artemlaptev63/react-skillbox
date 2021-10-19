@@ -6,11 +6,14 @@ const tokenSlice = createSlice({
   name: "token",
   initialState,
   reducers: {
-    setToken: (state, action) => {
-      return action.payload;
+    saveToken: () => {
+      if(window.__token__ && window.__token__ !== "undefined") {
+        return window.__token__;
+      }
+      return "";
     },
   }
 });
 
 export const tokenReducer = tokenSlice.reducer;
-export const {setToken} = tokenSlice.actions;
+export const {saveToken} = tokenSlice.actions;
