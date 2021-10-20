@@ -12,6 +12,16 @@
   height: 90px;
 }
 
+.textarea[aria-invalid="true"] {
+  border-color: red;
+  outline-color: red;
+}
+
+.error {
+  color: red;
+  height: 15px;
+}
+
 .button {
   border-radius: 0px 0px 3px 0px;
   border:none;
@@ -25,4 +35,9 @@
 
 .button:hover {
   opacity: .7;
+}
+
+.button:disabled {
+  opacity: .5;
+  cursor: initial;
 }
