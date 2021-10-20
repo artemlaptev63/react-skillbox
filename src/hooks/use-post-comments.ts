@@ -1,6 +1,6 @@
 import axios, {AxiosResponse} from "axios";
 import {useEffect, useState} from "react";
-import {Post} from "../context/posts-context/context";
+import {Post} from "../reducers/posts";
 import {useAppSelector} from "./use-selector";
 
 export type TComment = {

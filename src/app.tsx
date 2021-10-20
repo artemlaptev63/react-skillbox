@@ -4,7 +4,6 @@ import {Header} from "./shared/header/header";
 import {Layout} from "./shared/layout/layout";
 import {Content} from "./shared/content/content";
 import {CardsList} from "./shared/cards-list/cards-list";
-import {PostsContextProvider} from "./context/posts-context/provider";
 import "./main.global.css";
 import {Provider} from "react-redux";
 import {store} from "./store";
@@ -18,9 +17,7 @@ function AppComponent() {
     <Layout>
       <Header/>
       <Content>
-        <PostsContextProvider>
-          <CardsList/>
-        </PostsContextProvider>
+        <CardsList/>
       </Content>
     </Layout>
   )

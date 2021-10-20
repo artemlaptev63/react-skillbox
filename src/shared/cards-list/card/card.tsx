@@ -3,8 +3,8 @@ import {CardFooter} from "./card-footer/card-footer";
 import {CardHeader} from "./card-header/card-header";
 import {CardPreview} from "./card-preview/card-preview";
 import {CardMenu} from "./card-dropdown/card-dropdown";
-import {Post} from "../../../context/posts-context/context";
 import styles from "./card.css";
+import {Post} from "../../../reducers/posts";
 
 type CardProps = {
   post: Post;
