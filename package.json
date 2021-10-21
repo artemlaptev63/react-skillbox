@@ -9,11 +9,11 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development REDIRECT_URI=http://localhost:3000/auth/ CLIENT_ID=qvB2EedWRtWaEXnytfvr9A SECRET=pJzolKzy9-9pMihIMzQGPz1mPGKXWg node ./bin/dev.js",
     "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "build": "cross-env CLIENT_ID=G1MvCeRTHmRXOvsAKedW3A REDIRECT_URI=https://react-skillbox-63.herokuapp.com/auth/ SECRET=xsnoK7g2KYkkGvF22DcHuZCsr73AAw NODE_ENV=production webpack --config webpack.config.js",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "start": "cross-env CLIENT_ID=G1MvCeRTHmRXOvsAKedW3A REDIRECT_URI=https://react-skillbox-63.herokuapp.com/auth/ SECRET=xsnoK7g2KYkkGvF22DcHuZCsr73AAw node ./dist/server/server.js"
+    "start": "node ./dist/server/server.js"
   },
   "repository": {
     "type": "git",

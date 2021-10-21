@@ -7,7 +7,6 @@ const IS_DEV = NODE_ENV === "development";
 const IS_PROD = NODE_ENV === "production";
 const DEV_PLUGINS = [
   new HotModuleReplacementPlugin(),
-  new CleanWebpackPlugin(),
 ];
 
 const COMMON_PLUGINS = [
@@ -16,6 +15,7 @@ const COMMON_PLUGINS = [
     "process.env.REDIRECT_URI": `'${process.env.REDIRECT_URI}'`,
     "process.env.SECRET": `'${process.env.SECRET}'`
   }),
+  new CleanWebpackPlugin(),
 ];
 
 function setupDevtools() {

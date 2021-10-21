@@ -1,6 +1,7 @@
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 const {DefinePlugin} = require("webpack")
+const {CleanWebpackPlugin} = require("clean-webpack-plugin")
 const NODE_ENV = process.env.NODE_ENV;
 
 module.exports = {
@@ -59,5 +60,6 @@ module.exports = {
     "process.env.CLIENT_ID": `'${process.env.CLIENT_ID}'`,
     "process.env.REDIRECT_URI": `'${process.env.REDIRECT_URI}'`,
     "process.env.SECRET": `'${process.env.SECRET}'`
-  })]
+  }),
+  new CleanWebpackPlugin()]
 }
