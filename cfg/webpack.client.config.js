@@ -12,7 +12,9 @@ const DEV_PLUGINS = [
 
 const COMMON_PLUGINS = [
   new DefinePlugin({
-    "process.env.CLIENT_ID": `'${process.env.CLIENT_ID}'`
+    "process.env.CLIENT_ID": `'${process.env.CLIENT_ID}'`,
+    "process.env.REDIRECT_URI": `'${process.env.REDIRECT_URI}'`,
+    "process.env.SECRET": `'${process.env.SECRET}'`
   }),
 ];
 
