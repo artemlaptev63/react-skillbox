@@ -1,20 +1,17 @@
 import React from "react";
+import {useParams} from "react-router";
 import {Modal} from "../../../common/modal/modal";
-import {usePostComments} from "../../../hooks/use-post-comments";
+import {usePost} from "../../../hooks/use-post-comments";
 import {CommentsList} from "../comments-list/comments-list";
 import {CommentFormContainer} from "./form-container/form-container";
 import styles from "./post.css";
 
-type PostProps = {
-  onClose?(): void;
-  postId: string;
-}
-
-export function Post(props: PostProps) {
-  const {comments} = usePostComments(props.postId);
+export function Post() {
+  const params = useParams<{id: string}>();
+  const {comments} = usePost(params.id);
   
   return (
-    <Modal onClose={props.onClose}>
+    <Modal>
       <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem enim impedit magni</h2>
 
       <div className={styles.content}>

@@ -21,7 +21,7 @@ export type CommentResponse = {
 
 type CommentsResponse = [Post, CommentResponse];
 
-export function usePostComments(postId: string) {
+export function usePost(postId: string) {
   const token = useAppSelector(state => state.token);
   const [comments, setComments] = useState<TComment[]>([]);
 
@@ -32,6 +32,7 @@ export function usePostComments(postId: string) {
           Authorization: `bearer ${token}`
         }
       }).then((res: AxiosResponse<CommentsResponse>) => {
+        console.log(res);
         setComments(res.data[1].data.children);
       }).catch(console.log)
     }

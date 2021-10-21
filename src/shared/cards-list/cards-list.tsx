@@ -1,9 +1,11 @@
 import React from "react";
+import {Route} from "react-router";
 import {Loader} from "../../common/loader/loader";
 import {usePosts} from "../../hooks/use-posts";
 import {merge} from "../../utils/merge";
 import {Card} from "./card/card";
 import styles from "./cards-list.css";
+import {Post} from "./post/post";
 
 export function CardsList() {
   const {loading, error, data, handleItemClick, bottomOfList, isInfinityLoadDisabled, fetchPosts} = usePosts();
@@ -23,6 +25,9 @@ export function CardsList() {
           <div className={styles.loadMore} onClick={fetchPosts}>Загрузить еще</div>
         )
       }
+      <Route exact path="/posts/:id">
+        <Post/>
+      </Route>
       <div ref={bottomOfList}/>
     </ul>
   )

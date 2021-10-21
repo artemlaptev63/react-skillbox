@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {Post} from "../../../post/post";
+import React from "react";
+import {Link} from "react-router-dom";
 import styles from "./description.css";
 
 type DescriptionProps = {
@@ -9,20 +9,11 @@ type DescriptionProps = {
 }
 
 export function Description(props: DescriptionProps) {
-  const [isModalOpened, setIsModalOpened] = useState(false);
-
   return (
-    <>
-      <a className={styles.link} onClick={() => setIsModalOpened(true)}>
-        <span className={styles.description}>
-          {props.description}
-        </span>
-      </a>
-      {
-        isModalOpened ? (
-          <Post postId={props.postId} onClose={() => setIsModalOpened(false)}/>
-        ) : null
-      }
-    </>
+    <Link to={`/posts/${props.postId}`} className={styles.link}>
+      <span className={styles.description}>
+        {props.description}
+      </span>
+    </Link>
   )
 }

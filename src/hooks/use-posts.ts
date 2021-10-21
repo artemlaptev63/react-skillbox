@@ -12,9 +12,11 @@ export function usePosts()  {
   const [requestCount, setRequestCount] = useState(0);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {  
+    const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
       if(entries[0].isIntersecting && !wasCalled.current && token && !isInfinityLoadDisabled()) {
-        fetchPosts();
+        if(!loading) {
+          fetchPosts();
+        }
       }
     });
 
@@ -28,20 +30,19 @@ export function usePosts()  {
         wasCalled.current = false;
       }
     }
-  }, [bottomOfList.current, data.after, token, requestCount]);
+  }, [bottomOfList.current, data.after, token, requestCount, loading]);
 
   const handleItemClick = (id: string) => {
     console.log(id);
   }
 
   const fetchPosts = () => {
+    wasCalled.current = true;
+    setRequestCount(requestCount + 1);
     dispatch(getPosts({
       token,
       after: data.after,
-    })).then(() => {
-      setRequestCount(requestCount + 1);
-    })
-    wasCalled.current = true;
+    }))
   }
 
   const isInfinityLoadDisabled = () => {
