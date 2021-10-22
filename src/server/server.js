@@ -4,11 +4,17 @@ import {App} from "../app";
 import {indexTemplate} from "./indexTemplate";
 import axios from "axios";
 import {REDIRECT_URI} from "../constants";
+import compression from "compression";
+import helmet from "helmet";
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 
+app.use(compression());
+app.use(helmet({
+  contentSecurityPolicy: false
+}));
 app.use("/static", express.static("./dist/client"))
 
 app.get("/auth", (req, res) => {
@@ -26,7 +32,6 @@ app.get("/auth", (req, res) => {
       }
     }
   ).then(({data}) => {
-    console.log(data);
     res.send(
       indexTemplate(ReactDOM.renderToString(App()), data["access_token"]),
     )
