@@ -6,12 +6,30 @@ import {Content} from "./shared/content/content";
 import {CardsList} from "./shared/cards-list/cards-list";
 import "./main.global.css";
 import {Provider} from "react-redux";
-import {store} from "./store";
+import {store as reduxStore} from "./store";
 import {useToken} from "./hooks/use-token";
 import {useUserData} from "./hooks/use-user-data";
 import {BrowserRouter, Route, Redirect, Switch} from "react-router-dom";
 import {useIsMounted} from "./hooks/is-mounted";
-import {Post} from "./shared/cards-list/post/post";
+import {Action, action, createStore, StoreProvider} from "easy-peasy";
+
+export type CommentType = {
+  value: string;
+  setValue: Action<CommentType, string>;
+}
+
+export type StoreType = {
+  comment: CommentType;
+}
+
+const store = createStore<StoreType>({
+  comment: {
+    value: "",
+    setValue: action((state, payload) => {
+      state.value = payload;
+    }),
+  },
+});
 
 function AppComponent() {
   const [mounted] = useIsMounted();
@@ -33,7 +51,9 @@ function AppComponent() {
                     <Redirect to="/posts"/>
                   </Route>
                   <Route path="/posts">
-                    <CardsList/>
+                    <StoreProvider store={store}>
+                      <CardsList/>
+                    </StoreProvider>
                   </Route>
                   <Route>
                     404 — страница не найдена
@@ -49,7 +69,7 @@ function AppComponent() {
 }
 
 export const App = hot(() => (
-  <Provider store={store}>
+  <Provider store={reduxStore}>
     <AppComponent/>
   </Provider>
 ));

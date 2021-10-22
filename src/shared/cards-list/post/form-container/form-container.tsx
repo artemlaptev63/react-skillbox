@@ -1,5 +1,6 @@
 import React from "react";
 import {PostCommentForm, PostCommentFormValues} from "../form/form";
+import {PostCommentFormHomework} from "../homework-form/form";
 
 export function CommentFormContainer() {
 
@@ -8,6 +9,9 @@ export function CommentFormContainer() {
   }
 
   return (
-    <PostCommentForm handleSubmit={handleSubmit}/>
+    <>
+      {/* <PostCommentForm handleSubmit={handleSubmit}/> */}
+      <PostCommentFormHomework/>
+    </>
   )
 }
